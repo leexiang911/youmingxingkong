@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    width: 800px;
+    height: 505px;
+    /* 上面400，下面100，中间5px进度条 */
+    border: 1px solid;
+    margin: 100px auto;
+}
+
+.jumbotron {
+    width: 100%;
+    height: 400px;
+    outline: 1px solid red;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progressBar {
+    width: 100%;
+    height: 5px;
+    position: relative;
+}
+
+.progressStatus {
+    width: 0;
+    height: 100%;
+    background-color: rgb(197, 59, 31);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 缩略图 */
+.thumbnail {
+    width: 100%;
+    height: 100px;
+    outline: 1px solid blue;
+    overflow: hidden;
+}
+
+/* 巨幕图 */
+.jumbotronImage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s;
+
+}
+
+/* 用作遮罩层 */
+.coverBg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 1s;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, transparent 60%);
+}
+
+.jumbotronImage>span {
+    color: #FFFFFF;
+    font-size: 24px;
+    position: absolute;
+    bottom: 0;
+    letter-spacing: 1px;
+    font-style: italic;
+    width: 100%;
+    height: 45px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 20%, transparent 300%);
+}
+
+.arrow {
+    width: 34px;
+    height: 47px;
+    position: absolute;
+    top: calc(50% - 24px);
+    background: url(https://lice-1255683938.file.myqcloud.com/%E5%B8%B8%E7%94%A8svg%E5%9B%BE%E6%A0%87/arrow.png) no-repeat;
+    z-index: 1;
+    transition: transform 1s;
+}
+
+.jumbotron .leftArrow {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+    transform: translateX(-100%);
+}
+
+.jumbotron .rightArrow {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+    transform: translateX(100%);
+    background-position: 100% 0;
+}
+
+.jumbotron:hover .leftArrow {
+    transform: translateX(0);
+}
+
+.jumbotron:hover .rightArrow {
+    transform: translateX(0);
+}
+
+.leftArrow:hover {
+    background-position: 0 100%;
+}
+
+.rightArrow:hover {
+    background-position: 100% 100%;
+}
+
+.imageIndexContainer {
+    color: #FFFFFF;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    z-index: 1;
+    font-size: 22px;
+    font-style: italic;
+}
+
+.currentImage {
+    font-size: 30px;
+    color: rgb(208, 69, 35);
+}
+
+
+.thumbnail>ul {
+    /* 一个li 160 7张图片，总宽度是7*160 = 1220 */
+    width: 1220px;
+    height: 100%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.thumbnail>ul>li{
+    width: 160px;
+    height: 100%;
+    float: left;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail>ul>li>div{
+    width: 90%;
+    height: 85%;
+}

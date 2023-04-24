@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="../ccs/index.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- 最外层容器 -->
+    <div class="container">
+        <!-- 三个部分 -->
+        <!-- 上面巨幕图（大图） -->
+        <div class="jumbotron">
+
+            <!-- 里面图片会通过js代码来生成 -->
+            <!-- 左右箭头 -->
+            <div id="leftArrow" class="leftArrow arrow"></div>
+            <div id="rightArrow" class="rightArrow arrow"></div>
+
+            <!-- 当前是第几张图片 -->
+            <div class="imageIndexContainer">
+                <span class="currentImage">1</span>
+                /
+                <span class="totalImage">7</span>
+            </div>
+        </div>
+
+        <!-- 中间的进度条 -->
+        <div class="progressBar">
+            <!-- 进度条会通过JS代码来控制 -->
+            <div class="progressStatus"></div>
+        </div>
+        <!-- 缩略图部分 -->
+        <div class="thumbnail">
+            <!-- 这里还是通过js来生成 -->
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/index.js"></script>
+</body>
+
+</html>
