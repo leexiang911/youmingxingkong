@@ -108,6 +108,7 @@ function init() {
 
 /* 根据图片索引下标，更新巨幕图内容 */
 function updateJumbotron() {
+    console.log(currnetIndex, 9999)
     /* 更新巨幕图片 */
     let jumbotronImageCollection = $$(".jumbotronImage");
     for (let i = 0; i < jumbotronImageCollection.length; i++) {
@@ -166,7 +167,7 @@ function bindEvent() {
             }, 0)
         }
 
-        if (e.target.id === "rightArrow" &&canBeclick) {//用户点击了右箭头
+        if (e.target.id === "rightArrow" && canBeclick) {//用户点击了右箭头
             canBeclick = false
             /* 切换分两个部分，上面的巨幕图和下面的缩略图 */
             // 1.核心思想，更新currentIndex
@@ -189,6 +190,23 @@ function bindEvent() {
                 canBeclick = true;
             }
         }
+    }
+    thumbnaiUl.onclick = function (e) {
+        console.log(e.target)
+        currnetIndex = Number(e.target.getAttribute("data-id")) || 0
+        updateJumbotron();
+        // console.log(currnetIndex)
+
+        thumbnaiUl.style.transition = '1s'
+        thumbnaiUl.style.transform = `translateX(${-liWidth}px)`
+        thumbnaiUl.ontransitionend = function () {
+            let firstLi = thumbnaiUl.removeChild(thumbnaiUl.children[0])
+            thumbnaiUl.appendChild(firstLi);
+            thumbnaiUl.style.transition = '';
+            thumbnaiUl.style.transform = `translateX(0px)`
+            canBeclick = true;
+        }
+
     }
 }
 
